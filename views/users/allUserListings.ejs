@@ -1,0 +1,17 @@
+<% layout('layouts/boilerplate')%>
+
+<h3>Here are all the listings made by "<%= user.name %>"</h3>
+<% for (let list of user.listings) {%>
+    <div class="card mx-auto my-3" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title"><%=list.title%></h5>
+          <h6 class="card-subtitle mb-2 text-muted"><%=list.category%></h6>
+          <p class="card-text"><%=list.description %></p>
+          <a href="/listings/<%=list._id%>"> 
+            <button class="btn btn-primary">See Details</button>
+        </a>
+          
+        </div>
+      </div>
+    <% } %>
+

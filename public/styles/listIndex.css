@@ -1,0 +1,150 @@
+
+    body {
+      font-family: Arial, sans-serif;
+      /* background-color: #C5FAD5,; */
+      background: #241468;
+      background: linear-gradient(#241468,#920047);
+      color: white;
+      min-height:100vh;
+    }
+    
+    .container {
+      /* max-width: 800px; */
+      margin: 0 auto;
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      
+       
+    }
+    
+    .card {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      
+      
+      padding: 0.5rem 0.6rem;
+      
+      min-height:15rem;
+      max-height:22rem;
+      min-width:20rem;
+      max-width:20rem;
+
+      margin:18px;
+
+      background-color: #F79BD3;
+      border:7.5px solid #9F0D7F;
+      border-radius: 30px;
+    }
+
+    .innerCard{
+      
+      /* height:100%; */
+      border-radius: 10px;
+
+    }
+    
+    .card img {
+      width: 100px;
+      height: 100px;
+      /* border-radius: 50%; */
+      object-fit: cover;
+      margin-right: 20px;
+    }
+    
+    .card-content {
+      flex: 1;
+      /* border:10px solid pink; */
+    }
+    
+    .card-title {
+      font-weight: bold;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    
+    .card-description {
+      margin-bottom: 10px;
+    }
+    
+    .card-links {
+      display: flex;
+      justify-content: flex-start;
+    }
+    
+    .card-links a {
+      padding: 5px 10px;
+      color: #fff;
+      background-color: #333;
+      text-decoration: none;
+      border-radius: 3px;
+      margin-right: 10px;
+    }
+    .myButton{
+     
+        position:absolute;
+        bottom: 9px;
+      right:10px;
+      border-radius: 30px;
+      background-color:#9F0D7F;
+      
+      color:white;
+    }
+    .myButton:hover , .myButton::after{
+      background-color: #9F0D7F;
+      color:white;
+      transition:all;
+      transform: scale(1.1);
+      transition-duration: 200ms;
+      
+  }
+  .cardCategory{
+    position:absolute;
+bottom:9px;
+left:12px;
+  font-weight: bolder;
+  
+
+  }
+  
+  /* .myCard{
+    max-height: 300px;
+    max-width: 300px;
+    overflow: auto;
+    border-radius: 5%;
+  } */
+  .myTitle{
+    font-size:1.5rem;
+    text-align: center;
+    text-transform:capitalize;
+    margin-bottom: 1rem;
+  }
+  
+
+
+  .myDate{
+   padding-left: 10px;
+    height:30px;
+    width:100px;
+    background-color: white;
+    border-radius: 20%;
+    color: black;
+  }
+
+
+.mySelect{
+  height:60px;
+  width:400px;
+  border:none;
+  border-radius: 10px;
+}
+.card-text>span{
+  color:#241468;
+  font-size: 1.1rem;
+  font-weight:400;
+}
+   
+  

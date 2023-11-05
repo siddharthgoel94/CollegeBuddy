@@ -1,0 +1,97 @@
+<% layout('layouts/boilerplate')%>
+<link rel="stylesheet" href="/styles/listIndex.css">
+
+  
+<form action="/listings" method="GET" class="d-flex justify-content-around align-items-center mt-4">
+  
+  
+  
+  <h3>Filter By: </h3>
+
+    
+
+   
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Category</label>
+    <select class="form-control mt-2" name="category" id="exampleFormControlSelect1">
+      <option value="All">All</option>
+      <option value="Hackathon">Hackathon</option>
+      <option value="Project">Project</option>
+      <option value="Study Group">Study Group</option>
+    </select>
+  </div>
+
+
+
+
+  <div class="form-group">
+    <label for="exampleFormControlSelect2">Skill Set</label>
+    <select multiple class="form-control mySelect mt-2"  size="3" name="skillSetReq" id="exampleFormControlSelect2">
+      <option value="HTML">HTML</option>
+      <option value="CSS">CSS</option>
+      <option value="Javascript">Javascript</option>
+      <option value="React">React</option>
+      <option value="Node.js">Node.js</option>
+      <option value="Express">Express</option>
+      <option value="MongoDB">MongoDB</option>
+      <option value="Angular">Angular</option>
+      <option value="PHP">PHP</option>
+      <option value="Flask">Flask</option>
+      <option value="SQL">SQL</option>
+      <option value="Machine Learning">Machine Learning</option>
+      <option value="Web3">Web3</option>
+      <option value="AR/VR">AR/VR</option>
+      <option value="GenAI">GenAI</option>
+    </select>
+  </div>
+
+
+  <button class="btn btn-info">Apply Filter</button>
+
+  
+</form>
+
+  <div class="container">
+    <% for(let item of listings) {%>
+      <div class="card myCard">
+
+        <div class="innerCard">
+        <div class="card-body">
+          <h4 class="card-title myTitle"><%= item.title %></h4>
+          <!-- <h6 class="card-subtitle mb-2 text-muted"><%= item.description %></h6> -->
+          <!-- <p class="card-text"><%= item.description %></p> -->
+          <p class="card-text"><span>Skills We Have:</span> <%= item.skillSetHave %></p>
+          <p class="card-text"><span>Skills We Need:</span> <%= item.skillSetReq %></p>
+          <h6 class="card-subtitle mb-2 text-muted cardCategory"><%=item.category%></h6>
+          <!-- <a href="#" class="card-link"><%= item.title %></a>
+          <a href="#" class="card-link"><%= item.title %></a> -->
+          <p class="card-text">Submitted By: <span class="text-muted"> <%= item.author.name %></span></p>
+          <a href="/listings/<%=item._id%>"> 
+            <button class="btn myButton">See Details</button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+
+      <!-- <div class="card p-2 myCard">
+        <img src="<%= item.image %>" alt="<%= item.title %>">
+        <div class="card-content">
+          <div class="colorBg mt-0">
+          <div class="card-title myDate">Date</div>
+          <div class="card-title myTitle"><%= item.title %></div>
+          <div class="card-title myDesc"><%= item.skillSetHave %></div>
+          <div class="card-title myDesc"><%= item.skillSetReq %></div>
+          <div class="card-description myDesc"><%= item.description %></div>
+          <h6 class="card-subtitle mb-2 text-muted cardCategory"><%=item.category%></h6>
+          </div>
+           
+            <a href="/listings/<%=item._id%>"> 
+            <button class="btn myButton">See Details</button>
+        </a>
+        </div>
+        
+      </div> -->
+    <% }; %>
+  </div>
+

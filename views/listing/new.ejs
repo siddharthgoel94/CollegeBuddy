@@ -1,0 +1,129 @@
+<% layout('layouts/boilerplate')%>
+
+    <div class="container d-flex flex-column align-items-center">
+        <h1>Create a new vacancy</h1>
+        <div class="row w-75 d-flex flex-column align-items-center">
+            <div class="col-sm-8">
+                <div class="card">
+                    <div class="card-body">
+                        <form action="/listings" method="POST" noValidate class="mb-3 needs-validation">
+                            <div class="form-group mb-3">
+                                <label for="title">Title</label>
+                                <input type="text" class="form-control" id="title" name="listing[title]" required>
+                                <div class="invalid-feedback">
+                                </div>
+                            </div>
+
+                            <!-- <div class="form-group mb-3">
+                                <label for="category">Category</label>
+                                <input type="text" class="form-control" id="category" name="listing[category]" required>
+                                <div class="invalid-feedback">
+                                   
+                                </div>
+                            </div> -->
+                            <div class="form-group mb-3">
+                                <label for="category">Category</label>
+                                <select class="form-control" id="category" name="listing[category]" required>
+                                  <option value="Hackathon">Hackathon</option>
+                                  <option value="Project">Project</option>
+                                  <option value="Study Group">Study Group</option>
+                                </select>
+                              </div>
+
+                            <!-- <div class="form-group mb-3">
+                                <label for="title">Skill Set Required </label>
+                                <input type="text" class="form-control" id="title" name="listing[skillSetReq]" required>
+                                <div class="invalid-feedback">
+                                   
+                                </div>
+                            </div> -->
+
+                            <!-- <div class="form-group mb-3">
+                                <label for="title">Skill Set We Have</label>
+                                <input type="text" class="form-control" id="title" name="listing[skillSetHave]" required>
+                                <div class="invalid-feedback">
+                                   
+                                </div>
+                            </div> -->
+
+                            <div class="form-group mb-3">
+                                <label for="title">Description</label>
+                                <input type="text" class="form-control" id="title" name="listing[description]" required>
+                                <div class="invalid-feedback">
+                                   
+                                </div>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="vacancy">Vacancy</label>
+                                <input type="number" class="form-control" id="vacancy" name="listing[vacancy]" required>
+                                <div class="invalid-feedback">
+                                   
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group mb-3 col-md-6">
+                                    <label for="title">Skill Set Required </label>
+                                    <select class="form-select" size="2"  multiple name="listing[skillSetReq]">
+                                        <option value="HTML">HTML</option>
+                                        <option value="CSS">CSS</option>
+                                        <option value="Javascript">Javascript</option>
+                                        <option value="React">React</option>
+                                        <option value="Node.js">Node.js</option>
+                                        <option value="Express">Express</option>
+                                        <option value="MongoDB">MongoDB</option>
+                                        <option value="Angular">Angular</option>
+                                        <option value="PHP">PHP</option>
+                                        <option value="Flask">Flask</option>
+                                        <option value="SQL">SQL</option>
+                                        <option value="Machine Learning">Machine Learning</option>
+                                        <option value="Web3">Web3</option>
+                                        <option value="AR/VR">AR/VR</option>
+                                        <option value="GenAI">GenAI</option>
+                                      </select>
+                                    <div class="invalid-feedback">
+                                       
+                                    </div>
+                                </div>
+
+                                <div class="form-group mb-3 col-md-6">
+                                    <label for="title">Skill Set I have</label>
+                                    <select class="form-select" size="2" multiple name="listing[skillSetHave]">
+                                        <option value="HTML">HTML</option>
+                                        <option value="CSS">CSS</option>
+                                        <option value="Javascript">Javascript</option>
+                                        <option value="React">React</option>
+                                        <option value="Node.js">Node.js</option>
+                                        <option value="Express">Express</option>
+                                        <option value="MongoDB">MongoDB</option>
+                                        <option value="Angular">Angular</option>
+                                        <option value="PHP">PHP</option>
+                                        <option value="Flask">Flask</option>
+                                        <option value="SQL">SQL</option>
+                                        <option value="Machine Learning">Machine Learning</option>
+                                        <option value="Web3">Web3</option>
+                                        <option value="AR/VR">AR/VR</option>
+                                        <option value="GenAI">GenAI</option>
+                                      </select>
+                                    <div class="invalid-feedback">
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            <div class="d-flex justify-content-center mt-2">
+                                <button class="btn btn-success">Create new Listing</button>
+                            </div>
+
+                            <!-- <p>New User? <a href="/signup"> Sign Up</a></p> -->
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <a href="/listings">All listings</a>
+   

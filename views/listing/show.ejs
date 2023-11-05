@@ -1,0 +1,49 @@
+<% layout('layouts/boilerplate')%>
+
+<h1 class="text-center my-3">Details of vacancy</h1>
+
+<div class="container mx-auto">
+  <div class="card mx-auto" style="width: 18rem">
+    <div class="card-header">Title: <%= listing.title %></div>
+    <div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Category: <%=listing.category%></li>
+
+        <!-- listing.skillSetHAve and listing.skillSetReq is an array -->
+        <li class="list-group-item">Skill Set Req:<%= listing.skillSetReq %></li>
+        <li class="list-group-item">Skill Set Have : <%= listing.skillSetHave %></li>
+        <li class="list-group-item">Vacancies : <%= listing.vacancy %></li>
+        <li class="list-group-item">Author: <%= listing.author.name %></li>
+
+        
+        <li class="list-group-item">Desciption: <%= listing.description %></li>
+        <% if(currentUser && currentUser.equals(listing.author)){ %>
+          <!-- && currentUser.equals(listing.author) -->
+        <li class="list-group-item d-flex mx-auto">
+          <a href="/listings/<%=listing._id%>/edit">
+            <button class="btn btn-primary mx-3">Update</button>
+          </a>
+          <form
+            action="/listings/<%=listing._id%>?_method=DELETE"
+            method="POST"
+          >
+            <button class="btn btn-danger mx-3">Delete</button>
+          </form>
+        </li>
+        <% } %>
+        <form action="/listings/<%=listing._id%>/apply" method="POST">
+          <button class="btn btn-success">Apply</button>
+        </form>
+      </ul>
+    </div>
+    <div>
+      <% listing.requestArr.map((user)=>{%>
+        <div>
+          <%= user.name %>
+          <a class="btn btn-success" href="/listings/<%=listing._id%>/accept/<%=user._id%>">Accept</a>
+          <a class="btn btn-danger" href="/listings/<%=listing._id%>/reject/<%=user._id%>">Reject</a>
+        </div>
+      <%}) %>
+    </div>
+  </div>
+</div>

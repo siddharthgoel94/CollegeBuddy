@@ -1,0 +1,20 @@
+*{
+    color:white;
+}
+body{
+    background: linear-gradient(purple,rgb(0, 0, 147));
+    background-attachment: fixed;
+}
+.startLink{
+    text-decoration: none;
+    color: white;
+}
+/* body{
+    background-color: rgb(253, 236, 161);
+} */
+img{
+    border-radius: 20px;
+}
+/* .myButton{
+    background:linear-gradient(to right,magenta,yellow);
+} */
