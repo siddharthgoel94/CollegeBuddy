@@ -4,6 +4,9 @@
 
 CollegeBuddy is a platform designed to connect college students, enabling seamless team formations for collaborative projects and providing access to a range of off-campus opportunities critical for academic and professional growth.
 
+## PPT:
+https://docs.google.com/presentation/d/1e4khZfR1nfkI49YdD2by2-qDwKRsXn13BQTxtuY2hgA/edit?usp=sharing
+
 ## Problem
 
 College students often encounter challenges in finding compatible team members for hackathons, projects, and study groups. Additionally, they frequently miss out on important off-campus opportunities, such as scholarships, events, internships, and job prospects, impacting their educational and career development. The lack of a centralized, easily accessible platform for these opportunities hampers users' abilities to explore and apply for programs relevant to their interests and aspirations. This fragmented landscape leads to missed opportunities and a lack of transparency in accessing these valuable programs.
