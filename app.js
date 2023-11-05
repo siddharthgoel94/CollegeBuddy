@@ -13,17 +13,36 @@ const ListingSchema=require('./models/listing');
 const MethodOverride=require('method-override');
 const catchAsync=require('./utils/catchAsync');
 const ExpressError=require('./utils/ExpressError');
-// const { log } = require("console");
+const opportunityRoutes=require("./routes/opportunity");
+const commentRoutes=require("./routes/comments");
+const flash=require("connect-flash");
+const {isLoggedIn}=require("./middleware")
 
 const app = express();
-app.use(
-  session({
-    secret: "thisisasecret",
-    resave: false,
-    saveUninitialized: true,
-    // cookie: { secure: true }
-  })
-);
+// app.use(
+//   session({
+//     secret: "thisisasecret",
+//     resave: false,
+//     saveUninitialized: true,
+//     // cookie: { secure: true }
+//   })
+// );
+
+const sessionConfig={
+  secret:"mysecret",
+  resave:false,
+  saveUninitialized:true,
+  cookie:{
+      httpOnly:true,
+      expires:Date.now()+1000*60*60*24*7,
+      maxAge:1000*60*60*24*7
+  }
+  
+}
+app.use(session(sessionConfig))
+//use session before routes to include session and cookies in all the routes
+
+app.use(flash());
 // passport initializations
 passport.use(UserSchema.createStrategy());
 passport.use(new LocalStrategy(UserSchema.authenticate()));
@@ -42,17 +61,29 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(MethodOverride('_method'));
 
 
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname,'public')));
 // useUnifiedTopology: true;
 
+app.use((req,res,next)=>{
+  console.log(req.session);
+  res.locals.currentUser=req.user;
+  res.locals.success=req.flash("success");
+  res.locals.error=req.flash("error");
+  next();
+})
+
+
+app.use('/opportunity',opportunityRoutes);
+app.use('/opportunity/:id/comments',commentRoutes);
+
 // the isLoggedIn middleware
-const isLoggedIn = (req, res, next) => {
-  if (!req.isAuthenticated()) {
-    res.redirect('/login')
-  } else {
-    next();
-  }
-};
+// const isLoggedIn = (req, res, next) => {
+//   if (!req.isAuthenticated()) {
+//     res.redirect('/login')
+//   } else {
+//     next();
+//   }
+// };
 
 // This middleware would store the user in locals
 app.use((req, res, next) => {

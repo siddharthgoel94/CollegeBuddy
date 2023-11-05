@@ -1,0 +1,24 @@
+<% layout('layouts/boilerplate') %>
+
+<h1>All opportunity</h1>
+<a href="/opportunity/new">New opportunity</a>
+
+<% for (let opp of opportunity){ %>
+    <div class="card mb-3">
+        <div class="row">
+            <div class="col-md-4">
+                <img class="img-fluid" src="<%=opp.image %>" alt="">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title"><%= opp.title %></h5>
+                    <p class="card-text"><%=opp.description%></p>
+                    <p class="card-text">
+                        <small class="text-muted"> <%=opp.location%> </small>
+                    </p>
+                    <a href="/opportunity/<%=opp._id %>" class="btn btn-primary">View <%= opp.title %></a>
+                </div>
+            </div>
+        </div>
+    </div>
+<% } %>

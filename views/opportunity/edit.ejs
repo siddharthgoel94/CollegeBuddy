@@ -1,0 +1,43 @@
+<% layout('layouts/boilerplate') %>
+<div class="row">
+    <h1 class="text-center">Edit opportunity</h1>
+    <!-- offset 3 to center the show element as 6 is its size so 3 spacing-->
+    <div class="col-6 offset-3">
+        <form action="/opportunity/<%=opportunity._id %>?_method=PUT" method="POST" novalidate class="needs-validation">
+
+            <div class="mb-3">
+                <label class="form-label" for="title">Title</label>
+                <input class="form-control" type="text" id="title" name="opportunity[title]" value=<%=opportunity.title%> required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="description">Description</label>
+                <textarea class="form-control" type="text" id="description" name="opportunity[description]" value=<%=opportunity.description%> required></textarea>
+                <!-- <div class="valid-feedback">
+                    Looks good!
+                </div> -->
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="link">Link</label>
+                <textarea class="form-control" type="text" id="link" name="opportunity[link]" value=<%=opportunity.link%> required></textarea>
+                <!-- <div class="valid-feedback">
+                    Looks good!
+                </div> -->
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="location">Location</label>
+                <input class="form-control" type="text" id="location" name="opportunity[location]" value=<%=opportunity.location%> required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-info">Update opportunity</button>
+            </div>
+        </form>
+        <a href="/opportunity/<%=opportunity._id %>">Back to opportunity</a>
+    </div>
+</div>
+
