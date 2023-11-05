@@ -32,20 +32,24 @@ CollegeBuddy addresses these challenges by simplifying the team formation proces
 
 ## Technology Stack
 
-- **Frontend**: Built using [Frontend technologies and frameworks].
-- **Backend**: Leveraging [Backend technologies and frameworks].
-- **Database**: Stores data in [Database used].
-- **Hosting**: Deployed on [Hosting platform].
+- **Frontend**: Built using HTML, CSS, JavaScript, Bootstrap
+- **Backend**: Leveraging Node.js, Express, Mongoose
+- **Database**: Stores data in MongoDB
+- **Hosting**: Deployed on render
+
+## Team memeber details
+
+Team name :Infinite Loopers
+
+Team ID:6112
+- Siddharth Goel: Team Leader
+- Teeksha Harish: Team member
 
 ## Getting Started
 
-### Prerequisites
-
-- [List any prerequisites required to run the project, e.g., Node.js, MongoDB]
-
 ### Installation
 
-1. Clone the repository: `git clone [repository URL]`
+1. Clone the repository: `git clone https://github.com/siddharthgoel94/CollegeBuddy.git`
 2. Install dependencies: `npm install`
 3. Start the application: `npm start`
 
@@ -55,14 +59,3 @@ CollegeBuddy addresses these challenges by simplifying the team formation proces
 - Browse through opportunities or form teams by setting up your profile and searching for compatible team members.
 - Stay updated with the latest opportunities for scholarships, internships, events, and more.
 
-## Contributing
-
-Contributions to enhance CollegeBuddy are welcome. Fork the repository, make changes, and submit a pull request for review.
-
-## License
-
-This project is licensed under the [License Name]. Details can be found in the [LICENSE](link-to-license-file) file.
-
-## Contact
-
-For support or inquiries, reach out to [Your Name] at [Your Email Address].
