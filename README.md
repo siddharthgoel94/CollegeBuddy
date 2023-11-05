@@ -1,1 +1,1 @@
-# project-team-mate-finder
+# College Buddy
