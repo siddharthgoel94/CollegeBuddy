@@ -1,49 +1,67 @@
 <% layout('layouts/boilerplate')%>
+<link rel="stylesheet" href="/styles/listShow.css">
 
-<h1 class="text-center my-3">Details of vacancy</h1>
+<h1 class="text-center mt-3 mb-5">Details of vacancy</h1>
 
-<div class="container mx-auto">
-  <div class="card mx-auto" style="width: 18rem">
-    <div class="card-header">Title: <%= listing.title %></div>
+<div class="container mx-auto d-flex justify-content-center">
+
+  <div class="card mx-auto" style="width: 25rem">
+    <div class="card-header text-center" style="font-size: 1.5rem; text-transform: capitalize;"> <%= listing.title %></div>
     <div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">Category: <%=listing.category%></li>
+        <li class="list-group-item text-muted" style="font-size: 1.2rem;"><%=listing.category%></li>
 
         <!-- listing.skillSetHAve and listing.skillSetReq is an array -->
-        <li class="list-group-item">Skill Set Req:<%= listing.skillSetReq %></li>
-        <li class="list-group-item">Skill Set Have : <%= listing.skillSetHave %></li>
-        <li class="list-group-item">Vacancies : <%= listing.vacancy %></li>
-        <li class="list-group-item">Author: <%= listing.author.name %></li>
+        <li class="list-group-item" style="font-size: 1.1rem;">Skill Set Req:<%= listing.skillSetReq %></li>
+        <li class="list-group-item" style="font-size: 1.1rem;">Skill Set Have : <%= listing.skillSetHave %></li>
+        <li class="list-group-item text-muted">Vacancies : <%= listing.vacancy %></li>
+        <li class="list-group-item" style="font-style: italic;">Submitted by: <%= listing.author.name %></li>
 
         
-        <li class="list-group-item">Desciption: <%= listing.description %></li>
-        <% if(currentUser && currentUser.equals(listing.author)){ %>
+        <li class="list-group-item ">Desciption: <%= listing.description %></li>
+        <% if(currentUser && currentUser.equals(listing.author) && currentUser.equals(listing.author)){ %>
           <!-- && currentUser.equals(listing.author) -->
-        <li class="list-group-item d-flex mx-auto">
+        <li class="list-group-item d-flex mx-auto mt-3">
           <a href="/listings/<%=listing._id%>/edit">
-            <button class="btn btn-primary mx-3">Update</button>
+            <button class="btn btn-primary mx-3 px-3">Update</button>
           </a>
           <form
             action="/listings/<%=listing._id%>?_method=DELETE"
             method="POST"
           >
-            <button class="btn btn-danger mx-3">Delete</button>
+            <button class="btn btn-danger mx-3 mt-3">Delete</button>
           </form>
         </li>
-        <% } %>
-        <form action="/listings/<%=listing._id%>/apply" method="POST">
-          <button class="btn btn-success">Apply</button>
+        <% }else if (currentUser){%>
+        
+
+        <form action="/listings/<%=listing._id%>/apply" method="POST" class="d-flex justify-content-center">
+          <button class="btn btn-success my-3">Apply</button>
         </form>
       </ul>
     </div>
+    <%}%>
+    
+  </div>
+
+<%if( currentUser && currentUser.equals(listing.author) && listing.requestArr.length){%>
+  <div class="right" style="width: 30rem">
+    <div class="rightHeading">
+      <h3>Accept/Reject user requests</h3>
+    </div>
     <div>
+      <ul>
       <% listing.requestArr.map((user)=>{%>
         <div>
-          <%= user.name %>
-          <a class="btn btn-success" href="/listings/<%=listing._id%>/accept/<%=user._id%>">Accept</a>
-          <a class="btn btn-danger" href="/listings/<%=listing._id%>/reject/<%=user._id%>">Reject</a>
+          <li class="acceptList">
+            <span style="font-size:1.4rem"><%= user.name %></span>
+          <a class="btn btn-success m-3" href="/listings/<%=listing._id%>/accept/<%=user._id%>">Accept</a>
+          <a class="btn btn-danger m-3" href="/listings/<%=listing._id%>/reject/<%=user._id%>">Reject</a>
+        </li>
         </div>
       <%}) %>
+    </ul>
     </div>
   </div>
+  <%}%>
 </div>

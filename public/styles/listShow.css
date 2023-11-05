@@ -1,0 +1,8 @@
+body{
+    background: linear-gradient(#241468,#920047);
+    min-height:100vh;
+    color:white;
+}
+.card{
+    /* background-color: #F79BD3; */
+}
