@@ -1,0 +1,40 @@
+body{
+    background: linear-gradient(#241468,#920047);
+    color:white;
+    height:100vh;
+}
+.heading{
+    text-align: center;
+}
+a{
+    font-size:1.9rem;
+    text-decoration: none;
+    color:rgb(200,30,200);
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap:wrap;
+}
+.myCard{
+    width:30%;
+    margin: auto;
+    min-height:25rem;
+    min-width:22rem;
+}
+.card-title{
+    text-align: center;
+}
+.description{
+    font-size:1.1rem;
+}
+.myTitle{
+    text-transform: capitalize;
+}
+.details-button{
+    position: absolute;
+    left:150px;
+    bottom:10px;
+}
+

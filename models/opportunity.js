@@ -2,6 +2,7 @@ const mongoose=require('mongoose');
 const { opportunitySchemadSchema } = require('../schemas');
 const Schema=mongoose.Schema;
 const Comment=require('./comments');
+// const Review=require('./')
 
 const OpportunitySchema= new Schema({
     title:String,
@@ -25,7 +26,7 @@ const OpportunitySchema= new Schema({
 //mongoose middleware for cascade dlete of reviews
 OpportunitySchema.post('findOneAndDelete',async function(doc){
     if(doc){
-        await Review.deleteMany({ _id: {$in :doc.reviews}});
+        await Comment.deleteMany({ _id: {$in :doc.reviews}});
     }
 })
 

@@ -1,0 +1,37 @@
+body{
+    background: linear-gradient(#241468,#920047);
+    color:white;
+    min-height:100vh;
+}
+.myCard{
+    width:80%;
+    margin-top: 5rem;
+    height:21rem;
+}
+.containerLeft{
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    color: blue;;
+}
+a{
+    font-size:1.1rem;
+    /* text-decoration: none; */
+}
+.containerRight{
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 5rem;
+    width:44%;
+}
+.editButton, .delButton{
+    margin: auto;
+}
+.myButtons{
+    width:80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,7 +1,7 @@
 <% layout('layouts/boilerplate')%>
 
     <div class="container d-flex flex-column align-items-center">
-        <h1>Create a new vacancy</h1>
+        <h1>Make a new Team</h1>
         <div class="row w-75 d-flex flex-column align-items-center">
             <div class="col-sm-8">
                 <div class="card">
@@ -62,8 +62,8 @@
                             </div>
                             <div class="row">
                                 <div class="form-group mb-3 col-md-6">
-                                    <label for="title">Skill Set Required </label>
-                                    <select class="form-select" size="2"  multiple name="listing[skillSetReq]">
+                                    <label for="title">Skill Set Required (You can select multiple options) </label>
+                                    <select class="form-select" size="5"  multiple name="listing[skillSetReq]">
                                         <option value="HTML">HTML</option>
                                         <option value="CSS">CSS</option>
                                         <option value="Javascript">Javascript</option>
@@ -86,8 +86,8 @@
                                 </div>
 
                                 <div class="form-group mb-3 col-md-6">
-                                    <label for="title">Skill Set I have</label>
-                                    <select class="form-select" size="2" multiple name="listing[skillSetHave]">
+                                    <label for="title">Skill Set I have (You can select multiple options)</label>
+                                    <select class="form-select" size="5" multiple name="listing[skillSetHave]">
                                         <option value="HTML">HTML</option>
                                         <option value="CSS">CSS</option>
                                         <option value="Javascript">Javascript</option>

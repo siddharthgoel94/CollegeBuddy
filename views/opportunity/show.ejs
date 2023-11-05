@@ -1,25 +1,26 @@
 <% layout('layouts/boilerplate') %>
+<link rel="stylesheet" href="/styles/opportunityShow.css">
 <div class="row mb-3">
-    <div class="col-md-6">
-        <div class="card">
+    <div class="col-md-6 containerLeft">
+        <div class="card myCard">
             <div class="card-body">
               <h5 class="card-title"><%= opportunity.title  %></h5>
               <p class="card-text"><%= opportunity.description %></p>
             </div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">Link: <%=opportunity.link%></li>
+                <a href=<%=opportunity.link%> target="_a"><li class="list-group-item" style="color:blue;">Link To Opportunity</li></a>
               <li class="list-group-item text-muted">Location: <%=opportunity.location%></li>
             </ul>
-            <div class="card-body">
-                <a class="card-link btn btn-warning" href="/opportunity/<%=opportunity._id %>/edit">Edit</a>
+            <div class="card-body myButtons">
+                <a class="card-link btn btn-warning editButton" href="/opportunity/<%=opportunity._id %>/edit">Edit</a>
                 <form class="d-inline" action="/opportunity/<%=opportunity._id%>?_method=DELETE" method="POST">
-                    <button class="card-link btn btn-danger">Delete</button>
+                    <button class="card-link btn btn-danger delButton">Delete</button>
                 </form>
             </div>
         </div>
         
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6 containerRight">
         <h2>Leave a comment</h2>
         <form action="/opportunity/<%=opportunity._id %>/comments" method="POST" class="mb-3 needs-validation" novalidate>
             <div class="mb-3">
@@ -33,7 +34,7 @@
                     Looks good!
                 </div>
             </div>
-            <button class="btn btn-success">Submit</button>
+            <button class="btn btn-success">Add Review</button>
         </form>
         <%for(let comment of opportunity.comments){%>
             <div class="card mb-3">
